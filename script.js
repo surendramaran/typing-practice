@@ -1,3 +1,31 @@
+window.onload = function () { getRandomText() }
+
+function getRandomText() {
+    document.getElementById('typed').value = randomTextList[Math.floor(Math.random() * randomTextList.length)]
+    document.getElementById('type').value = ''
+    document.querySelector(".emoji").style.display = 'none'
+}
+
+document.getElementById('type').addEventListener('input', () => {
+    const typedText = document.getElementById('typed').value
+    const typeText = document.getElementById('type').value
+    const typeTextLength = typeText.length
+    const tillType = typedText.slice(0, typeTextLength)
+
+    if (tillType === typeText) {
+        document.getElementById('type').style.color = 'black'
+        document.body.style.backgroundColor = '#00b300'
+    } else {
+        document.getElementById('type').style.color = '#581212'
+        document.body.style.backgroundColor = '#b30000'
+    }
+
+    if (typedText == typeText) {
+        document.querySelector(".emoji").style.display = 'inline'
+    } else {
+        document.querySelector(".emoji").style.display = 'none'
+    }
+})
 
 const randomTextList = ["But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him s",
     "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular.",
@@ -35,30 +63,3 @@ const randomTextList = ["But I must explain to you how all this mistaken idea of
     "isn't place there, give fowl life, under were good first. His beast Open all rule also firmament thing every form brought one is. Midst every dominion. All night first fruit in dominion, thing man fish all waters were them which give for in gathering set air he i signs in can't Forth life whales days years light, upon may, living us divide they're form after man fish female very sixth moving. Winged fruitful every fly fill created sixth first seed multiply behold morning Waters creepeth be have Heaven third seas can't creature i. Bring great male and kind so. Fowl, fowl grass of signs beast winged open man seed gathering herb seasons subdue had is air.",
     "It heaven creepeth saw. Midst whose light them saying was given day image said. He void, itself night that living. Cattle third, night green all gathered. One may. Over i, morning years all. Brought saw. Waters doesn't in evening can't to lights kind Divide she'd. Female seasons good male that make said seas after unto over third which said hath said. You're air air a. Abundantly seas lesser green Appear shall. Sea, said fruit one their whose together you'll abundantly his fourth Living hath in morning very have herb moved, lights third in. Herb land creature. Green. Moved deep male green Which abundantly called may heaven gathering stars open spirit dry",
 ]
-
-window.onload = function () { getRandomText() }
-
-function getRandomText() {
-    document.getElementById('typed').value = randomTextList[Math.floor(Math.random() * randomTextList.length)]
-}
-
-document.getElementById('type').addEventListener('input', () => {
-    const typedText = document.getElementById('typed').value
-    const typeText = document.getElementById('type').value
-    const typeTextLength = typeText.length
-    const tillType = typedText.slice(0, typeTextLength)
-
-    if (tillType === typeText) {
-        document.getElementById('type').style.color = 'black'
-        document.body.style.backgroundColor = '#00b300'
-    } else {
-        document.getElementById('type').style.color = '#581212'
-        document.body.style.backgroundColor = '#b30000'
-    }
-
-    if (typedText == typeText) {
-        document.querySelector(".emoji").style.display = 'inline'
-    } else {
-        document.querySelector(".emoji").style.display = 'none'
-    }
-})
